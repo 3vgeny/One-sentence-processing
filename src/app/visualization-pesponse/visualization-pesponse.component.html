@@ -1,0 +1,11 @@
+<h2>{{currentSentenceProcessingResponse.list[0].meanings[0].actualKeyword}}</h2>
+<div *ngFor="let car of cars">
+    <div *ngFor="let field of car | keyvalue">{{field.key}} : {{field.value }}</div>
+</div>
+<hr>
+<div *ngFor="let meaningsArr of currentSentenceProcessingResponse.list[0].meanings">
+    <div class="field" *ngFor="let field of meaningsArr | keyvalue">{{field.key}} : {{field.value }}</div>
+</div>
+
+<!-- <h2>{{cars2}}</h2> -->
+<!-- <h2 *ngFor="let field of cars2">{{field }}</h2> -->

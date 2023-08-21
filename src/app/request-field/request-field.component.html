@@ -1,0 +1,29 @@
+<p>request-field works!</p>
+<div class="field" *ngFor="let field of currentRequest | keyvalue">{{field.key}} : {{field.value }}</div>
+<div class="fiels-input">
+    <label for="">
+        <p>profileType: </p>
+        <input type="text" [(ngModel)]="currentRequest.profileType" placeholder="add profileType">
+    </label>
+    <label for="">
+        <p>section: </p>
+        <input type="text" [(ngModel)]="currentRequest.section" placeholder="add section">
+    </label>
+    <label for="">
+        <p>description: </p>
+        <input type="text" [(ngModel)]="currentRequest.description" placeholder="add description">
+    </label>
+    <label for="">
+        <p>keyWord: </p>
+        <input type="text" [(ngModel)]="currentRequest.keyWord" placeholder="add keyWord">
+    </label>
+    <label for="">
+        <p>name: </p>
+        <input type="text" [(ngModel)]="currentRequest.name" placeholder="add name">
+    </label>
+</div>
+<!-- <label for="profileType">profileType: </label>
+<input id="profileType" type="text"> -->
+
+
+<!-- https://translated.turbopages.org/proxy_u/en-ru.ru.904f65fb-64e0fe80-c2463aef-74722d776562/https/stackoverflow.com/questions/5803023/how-to-place-two-divs-next-to-each-other -->

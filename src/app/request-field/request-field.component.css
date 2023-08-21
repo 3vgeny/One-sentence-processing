@@ -1,0 +1,22 @@
+.fiels-input {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+/* 
+input {
+    width: 250px;
+    height: 25px;
+}
+
+label {
+    display: flex;
+    flex-direction: row;
+    margin-right: 50px;
+    align-items: center;
+}
+
+label p {
+    margin-right: 10px
+} */
