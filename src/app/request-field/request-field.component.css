@@ -1,10 +1,51 @@
-.fiels-input {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+.mat-list-item {
+  height: 500px;
 }
 
-/* 
+
+.fields-form {
+  display: flex;
+  /* чтобы можно было использовать команды по типу flex-direction */
+  flex-direction: column;
+  justify-content: center;
+  /* margin-left: 8px; */
+  width: 75%;
+}
+
+.form-field {
+  height: 78px;
+  width: 100%;
+}
+
+.button-form-fields {
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* .fields-input {
+  display: flex;
+  чтобы можно было использовать команды по типу flex-direction
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: 8px;
+}
+
+input {
+  width: 250px;
+  height: 25px;
+} */
+
+/* .fields-form mat-form-field+mat-form-field {
+
+  margin: 8px;
+} */
+
+/* .input-field {
+  width: 250px;
+  height: 25px;
+} */
+
+/*
 input {
     width: 250px;
     height: 25px;
@@ -19,4 +60,28 @@ label {
 
 label p {
     margin-right: 10px
+} */
+/* #profileType {
+  margin-left: 25px;
+  margin-right: 25px;
+}
+
+#section {
+  margin-left: 25px;
+  margin-right: 25px;
+}
+
+#description {
+  margin-left: 25px;
+  margin-right: 25px;
+}
+
+#q {
+  margin-left: 25px;
+  margin-right: 25px;
+}
+
+#name {
+  margin-left: 25px;
+  margin-right: 25px;
 } */
