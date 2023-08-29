@@ -1,6 +1,12 @@
-.mat-list-item {
-  height: 500px;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
+
+/* .mat-list-item {
+  height: 300px;
+} */
 
 
 .fields-form {
@@ -8,8 +14,8 @@
   /* чтобы можно было использовать команды по типу flex-direction */
   flex-direction: column;
   justify-content: center;
+  margin: 10px 20px;
   /* margin-left: 8px; */
-  width: 75%;
 }
 
 .form-field {
@@ -20,6 +26,14 @@
 .button-form-fields {
   display: flex;
   justify-content: flex-end;
+}
+
+.conteiner {
+  width: 450px;
+  margin: 10px 20px;
+  padding: 5px 15px;
+  box-shadow: inset 0 0 8px rgb(161, 161, 161),
+    1px 1px 3px darkgray;
 }
 
 /* .fields-input {

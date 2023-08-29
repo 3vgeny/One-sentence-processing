@@ -1,0 +1,65 @@
+<div class="content">
+  <h2>List -> Sentences</h2>
+  <div *ngFor="let fields of sentencesArr | keyvalue">
+    <ng-container
+      *ngIf="
+        fields.key === 'clauses';
+        then conditionIsTrue;
+        else conditionIsFalse
+      "
+    >
+    </ng-container>
+
+    <ng-template #conditionIsTrue>
+      <div>{{ fields.key }} :</div>
+
+      <div
+        style="margin-left: 25px"
+        *ngFor="
+          let fieldsClauses of list.sentences[iSentences].clauses | keyvalue
+        "
+      >
+        {{ fieldsClauses.key }} :
+        <div
+          style="margin-left: 25px"
+          *ngFor="
+            let fiels0 of list.sentences[iSentences].clauses['0'] | keyvalue
+          "
+        >
+          <ng-container
+            *ngIf="
+              fiels0.key === 'components';
+              then conditionIsTrue;
+              else conditionIsFalse
+            "
+          >
+          </ng-container>
+
+          <ng-template #conditionIsTrue>
+            {{ fiels0.key }} :
+            <div
+              style="margin-left: 25px"
+              *ngFor="
+                let fielsComponents of list.sentences[iSentences].clauses['0']
+                  .components | keyvalue
+              "
+            >
+              {{ fielsComponents.key }} :
+              <app-clauses-components
+                [clausesComponent]="fielsComponents.value"
+              ></app-clauses-components>
+            </div>
+          </ng-template>
+
+          <ng-template #conditionIsFalse>
+            {{ fiels0.key }} : {{ fiels0.value }}
+          </ng-template>
+        </div>
+      </div>
+    </ng-template>
+
+    <ng-template #conditionIsFalse>
+      {{ fields.key }} : {{ fields.value }}
+    </ng-template>
+  </div>
+</div>

@@ -15,12 +15,20 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
+import { ListMeaningsComponent } from './list-meanings/list-meanings.component';
+import { ListRulesComponent } from './list-rules/list-rules.component';
+import { ListSentencesComponent } from './list-sentences/list-sentences.component';
+import { ClausesComponentsComponent } from './clauses-components/clauses-components.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     VisualizationPesponseComponent,
     RequestFieldComponent,
+    ListMeaningsComponent,
+    ListRulesComponent,
+    ListSentencesComponent,
+    ClausesComponentsComponent,
   ],
   imports: [
     BrowserModule,

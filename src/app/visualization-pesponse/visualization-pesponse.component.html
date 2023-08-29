@@ -1,15 +1,89 @@
-<!-- <h2>{{currentSentenceProcessingResponse.list[0].meanings[0].actualKeyword}}</h2>
-<div *ngFor="let car of cars">
-    <div *ngFor="let field of car | keyvalue">{{field.key}} : {{field.value }}</div>
-</div>
-<hr> -->
-<div
-  *ngFor="let meaningsArr of currentSentenceProcessingResponse.list[0].meanings"
->
-  <div class="field" *ngFor="let field of meaningsArr | keyvalue">
-    {{ field.key }} : {{ field.value }}
+<!-- <h2>{{currentSentenceProcessingResponse.list[0].meanings[0].actualKeyword}}</h2> -->
+<!-- <div *ngFor="let car of cars">
+  <div *ngFor="let field of car | keyvalue">
+    <ng-container
+      *ngIf="field.key === 'stamp'; then coursesList; else noCourses"
+    >
+    </ng-container>
+
+    <ng-template #coursesList>
+      <p>Car model - {{ field.key }} : {{ field.value }}</p>
+    </ng-template>
+
+    <ng-template #noCourses>
+      <p>{{ field.key }} : {{ field.value }}</p>
+    </ng-template>
   </div>
 </div>
+<hr /> -->
+
+<!-- <div *ngFor="let i of arrStr">
+  <ng-container *ngIf="i === 'asd'; then coursesList; else noCourses">
+  </ng-container>
+
+  <ng-template #coursesList>
+    <p>{{ i }} if -> yes</p>
+  </ng-template>
+
+  <ng-template #noCourses>
+    <p>{{ i }} if -> no</p>
+  </ng-template>
+</div> -->
+
+<div
+  class="page-list"
+  *ngFor="let list of currentSentenceProcessingResponse.list; let iList = index"
+>
+  <app-list-meanings
+    *ngFor="let meaningsArr of list.meanings"
+    [meaningsArr]="meaningsArr"
+  ></app-list-meanings>
+
+  <!-- Displays minings in one div in a column -->
+  <!-- <app-list-meanings [list]="list"></app-list-meanings> -->
+
+  <app-list-rules
+    *ngFor="let rulesArr of list.rules"
+    [rulesArr]="rulesArr"
+  ></app-list-rules>
+
+  <app-list-sentences
+    *ngFor="let sentencesArr of list.sentences; let iSentences = index"
+    [list]="list"
+    [iList]="iList"
+    [sentencesArr]="sentencesArr"
+    [iSentences]="iSentences"
+  ></app-list-sentences>
+</div>
+
+<!-- {{ fields.key }} : {{ fields.value }} -->
+
+<!-- -------- IF ELSE -> WORK -------------------
+<div *ngFor="let i of arrStr">
+  <ng-container *ngIf="i === 'asd'; then coursesList; else noCourses">
+  </ng-container>
+
+  <ng-template #coursesList>
+    <p>{{ i }} if -> yes</p>
+  </ng-template>
+
+  <ng-template #noCourses>
+    <p>{{ i }} if -> no</p>
+  </ng-template>
+</div> -->
+
+<!--
+<div *ngFor="let i of arr">
+  <div *ngIf="i === 2">
+    {{ i }}
+  </div>
+</div> -->
+
+<!-- <div *ngFor="let i of arrStr">
+  <div *ngIf="i === 'asdq'; else ">
+    {{ i }}
+  </div>
+</div> -->
 
 <!-- <h2>{{cars2}}</h2> -->
 <!-- <h2 *ngFor="let field of cars2">{{field }}</h2> -->

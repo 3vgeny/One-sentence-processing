@@ -1,0 +1,17 @@
+<div class="content">
+  <h2>List -> Meanings</h2>
+  <div class="field" *ngFor="let fields of meaningsArr | keyvalue">
+    {{ fields.key }} : {{ fields.value }}
+  </div>
+</div>
+
+<!-- Displays minings in one div in a column -->
+<!-- <div class="content">
+  <h2>List -> Meanings</h2>
+  <div *ngFor="let meaningsArr of list.meanings">
+    <div class="field" *ngFor="let fields of meaningsArr | keyvalue">
+      {{ fields.key }} : {{ fields.value }}
+    </div>
+    <p>NEXT MEANING</p>
+  </div>
+</div> -->

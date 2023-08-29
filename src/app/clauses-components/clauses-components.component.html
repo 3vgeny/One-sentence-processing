@@ -1,0 +1,45 @@
+<!-- {{ a }} -->
+
+<div
+  style="margin-left: 25px"
+  *ngFor="let field of clausesComponent | keyvalue"
+>
+  {{ field.value }}
+  <ng-container
+    *ngIf="
+      field.key === 'component' && field.value === !undefined;
+      then conditionIsTrue;
+      else conditionIsFalse
+    "
+  >
+  </ng-container>
+
+  <ng-template #conditionIsTrue>
+    <!-- <div *ngFor="let component of field.value">
+      <div *ngFor="let fields of component | keyvalue">
+        {{ fields.key }} : {{ fields.value }}
+      </div>
+    </div> -->
+  </ng-template>
+
+  <ng-template #conditionIsFalse> </ng-template>
+</div>
+
+<div *ngFor="let component of clausesComponent.component">
+  <div *ngIf="component; else conditionIsFalse">
+    <div *ngFor="let fields of component | keyvalue">
+      {{ fields.key }} : {{ fields.value }}
+    </div>
+  </div>
+  <ng-template #conditionIsFalse> </ng-template>
+</div>
+<!-- <ng-container *ngIf="i === 'asd'; then coursesList; else noCourses">
+</ng-container>
+
+<ng-template #coursesList>
+  <p>{{ i }} if -> yes</p>
+</ng-template>
+
+<ng-template #noCourses>
+  <p>{{ i }} if -> no</p>
+</ng-template> -->

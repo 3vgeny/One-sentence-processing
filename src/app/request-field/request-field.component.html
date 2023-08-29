@@ -1,10 +1,11 @@
-<p>request-field works!</p>
-<div class="field" *ngFor="let field of currentRequest | keyvalue">
-  {{ field.key }} : {{ field.value }}
-</div>
-<hr />
+<div class="conteiner">
+  <!-- <p>request-field works!</p>
+  <div class="field" *ngFor="let field of currentRequest | keyvalue">
+    {{ field.key }} : {{ field.value }}
+  </div>
+  <hr /> -->
 
-<!-- <mat-list>
+  <!-- <mat-list>
   <mat-list-item>
     <mat-form-field appearance="outline">
       <mat-label>profileType:</mat-label>
@@ -54,58 +55,58 @@
   </mat-list-item>
 </mat-list> -->
 
-<div class="fields-form">
-  <mat-form-field class="form-field" appearance="outline">
-    <mat-label>profileType</mat-label>
-    <input
-      matInput
-      [(ngModel)]="currentRequest.profileType"
-      placeholder="Enter profileType"
-    />
-  </mat-form-field>
+  <div class="fields-form">
+    <mat-form-field class="form-field" appearance="outline">
+      <mat-label>profileType</mat-label>
+      <input
+        matInput
+        [(ngModel)]="currentRequest.profileType"
+        placeholder="Enter profileType"
+      />
+    </mat-form-field>
 
-  <mat-form-field class="form-field" appearance="outline">
-    <mat-label>section</mat-label>
-    <input
-      matInput
-      [(ngModel)]="currentRequest.section"
-      placeholder="Enter section"
-    />
-  </mat-form-field>
+    <mat-form-field class="form-field" appearance="outline">
+      <mat-label>section</mat-label>
+      <input
+        matInput
+        [(ngModel)]="currentRequest.section"
+        placeholder="Enter section"
+      />
+    </mat-form-field>
 
-  <mat-form-field class="form-field" appearance="outline">
-    <mat-label>description</mat-label>
-    <input
-      matInput
-      [(ngModel)]="currentRequest.description"
-      placeholder="Enter description"
-    />
-  </mat-form-field>
+    <mat-form-field class="form-field" appearance="outline">
+      <mat-label>description</mat-label>
+      <input
+        matInput
+        [(ngModel)]="currentRequest.description"
+        placeholder="Enter description"
+      />
+    </mat-form-field>
 
-  <mat-form-field class="form-field" appearance="outline">
-    <mat-label>keyWord</mat-label>
-    <input
-      matInput
-      [(ngModel)]="currentRequest.keyWord"
-      placeholder="Enter keyWord"
-    />
-  </mat-form-field>
+    <mat-form-field class="form-field" appearance="outline">
+      <mat-label>keyWord</mat-label>
+      <input
+        matInput
+        [(ngModel)]="currentRequest.keyWord"
+        placeholder="Enter keyWord"
+      />
+    </mat-form-field>
 
-  <mat-form-field class="form-field" appearance="outline">
-    <mat-label>name</mat-label>
-    <input
-      matInput
-      [(ngModel)]="currentRequest.name"
-      placeholder="Enter name"
-    />
-  </mat-form-field>
-  <div class="button-form-fields">
-    <button class="button-form-fields" mat-raised-button color="accent">
-      Apply
-    </button>
+    <mat-form-field class="form-field" appearance="outline">
+      <mat-label>name</mat-label>
+      <input
+        matInput
+        [(ngModel)]="currentRequest.name"
+        placeholder="Enter name"
+      />
+    </mat-form-field>
+    <div class="button-form-fields">
+      <button class="button-form-fields" mat-raised-button color="accent">
+        Apply
+      </button>
+    </div>
   </div>
 </div>
-
 <!-- <div class="fields-input">
   <label for="profileType">profileType:</label>
   <input
