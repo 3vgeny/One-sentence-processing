@@ -34,26 +34,32 @@
   class="page-list"
   *ngFor="let list of currentSentenceProcessingResponse.list; let iList = index"
 >
-  <app-list-meanings
-    *ngFor="let meaningsArr of list.meanings"
-    [meaningsArr]="meaningsArr"
-  ></app-list-meanings>
+  <div class="content">
+    <app-list-meanings
+      *ngFor="let meaningsArr of list.meanings"
+      [meaningsArr]="meaningsArr"
+    ></app-list-meanings>
+  </div>
 
   <!-- Displays minings in one div in a column -->
   <!-- <app-list-meanings [list]="list"></app-list-meanings> -->
 
-  <app-list-rules
-    *ngFor="let rulesArr of list.rules"
-    [rulesArr]="rulesArr"
-  ></app-list-rules>
+  <div class="content">
+    <app-list-rules
+      *ngFor="let rulesArr of list.rules"
+      [rulesArr]="rulesArr"
+    ></app-list-rules>
+  </div>
 
-  <app-list-sentences
-    *ngFor="let sentencesArr of list.sentences; let iSentences = index"
-    [list]="list"
-    [iList]="iList"
-    [sentencesArr]="sentencesArr"
-    [iSentences]="iSentences"
-  ></app-list-sentences>
+  <div class="content">
+    <app-list-sentences
+      *ngFor="let sentencesArr of list.sentences; let iSentences = index"
+      [list]="list"
+      [iList]="iList"
+      [sentencesArr]="sentencesArr"
+      [iSentences]="iSentences"
+    ></app-list-sentences>
+  </div>
 </div>
 
 <!-- {{ fields.key }} : {{ fields.value }} -->

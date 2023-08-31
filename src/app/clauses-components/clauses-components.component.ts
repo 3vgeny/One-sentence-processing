@@ -8,5 +8,6 @@ import { SentenceProcessingResponseSentensesClauses0ComponentsCharacteristicObje
 })
 export class ClausesComponentsComponent {
   @Input()
-  clausesComponent!: SentenceProcessingResponseSentensesClauses0ComponentsCharacteristicObjects;
+  currentFieldComponents!: SentenceProcessingResponseSentensesClauses0ComponentsCharacteristicObjects;
+  @Input() currentFieldComponentsName!: string;
 }

@@ -44,9 +44,9 @@
                   .components | keyvalue
               "
             >
-              {{ fielsComponents.key }} :
               <app-clauses-components
-                [clausesComponent]="fielsComponents.value"
+                [currentFieldComponents]="fielsComponents.value"
+                [currentFieldComponentsName]="fielsComponents.key"
               ></app-clauses-components>
             </div>
           </ng-template>

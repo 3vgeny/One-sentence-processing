@@ -1,38 +1,78 @@
-<!-- {{ a }} -->
-
 <div
-  style="margin-left: 25px"
-  *ngFor="let field of clausesComponent | keyvalue"
+  *ngIf="
+    !(currentFieldComponentsName === 'undefined');
+    else currentFieldComponentsNameNotUndefined
+  "
 >
-  {{ field.value }}
-  <ng-container
+  <div
     *ngIf="
-      field.key === 'component' && field.value === !undefined;
+      !(currentFieldComponents.component.length === 0);
       then conditionIsTrue;
       else conditionIsFalse
     "
-  >
-  </ng-container>
+  ></div>
 
   <ng-template #conditionIsTrue>
-    <!-- <div *ngFor="let component of field.value">
-      <div *ngFor="let fields of component | keyvalue">
-        {{ fields.key }} : {{ fields.value }}
+    {{ currentFieldComponentsName }} :
+    <div
+      style="margin-left: 25px"
+      *ngFor="let field of currentFieldComponents | keyvalue"
+    >
+      <div *ngIf="field.key === 'component'; else conditionIsFalse">
+        {{ field.key }} :
+        <div
+          style="margin-left: 25px"
+          *ngFor="let fieldFromArrComponent of currentFieldComponents.component"
+        >
+          <div *ngFor="let fieldComponent of fieldFromArrComponent | keyvalue">
+            {{ fieldComponent.key }} : {{ fieldComponent.value }}
+          </div>
+        </div>
       </div>
-    </div> -->
+
+      <ng-template #conditionIsFalse>
+        {{ field.key }} : {{ field.value }}
+      </ng-template>
+    </div>
   </ng-template>
 
-  <ng-template #conditionIsFalse> </ng-template>
+  <ng-template #conditionIsFalse>
+    {{ currentFieldComponentsName }} : Default values
+  </ng-template>
 </div>
 
-<div *ngFor="let component of clausesComponent.component">
-  <div *ngIf="component; else conditionIsFalse">
+<ng-template #currentFieldComponentsNameNotUndefined>
+  {{ currentFieldComponentsName }} :
+  <div *ngFor="let fieldArrUndefined of currentFieldComponentsName">
+    <div *ngFor="let fieldUndefined of fieldArrUndefined | keyvalue">
+      {{ fieldUndefined.key }} : {{ fieldUndefined.value }}
+    </div>
+  </div>
+</ng-template>
+
+<!-- <div *ngIf="currentFieldComponentsName === 'undefined'">
+  <p>HERE</p>
+</div> -->
+
+<!-- <div *ngIf="clausesComponent.component.length === 0; else conditionIsFalse">
+  <p>Component array empty</p>
+</div>
+<ng-template #conditionIsFalse>
+  <p>Component array Not empty</p>
+</ng-template> -->
+
+<!-- <div *ngFor="let component of clausesComponent.component">
+  {{ component }}
+  <div *ngIf="component.length(); else conditionIsFalse">
     <div *ngFor="let fields of component | keyvalue">
       {{ fields.key }} : {{ fields.value }}
     </div>
   </div>
-  <ng-template #conditionIsFalse> </ng-template>
-</div>
+  <ng-template #conditionIsFalse>
+    <p>Component array undefined</p>
+  </ng-template>
+</div> -->
+
 <!-- <ng-container *ngIf="i === 'asd'; then coursesList; else noCourses">
 </ng-container>
 
