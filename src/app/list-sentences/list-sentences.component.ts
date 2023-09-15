@@ -16,7 +16,14 @@ export class ListSentencesComponent {
   @Input() sentencesArr: any;
   @Input() iSentences: any;
 
-  constructor(private SentenceProcessingService: SentenceProcessingService) {}
-  currentSentenceProcessingResponse: SentenceProcessingResponse =
-    this.SentenceProcessingService.getSentenceProcessingResponse();
+  // constructor(private SentenceProcessingService: SentenceProcessingService) {}
+
+  // currentSentenceProcessingResponse: SentenceProcessingResponse =
+  //   this.SentenceProcessingService.getSentenceProcessingResponse();
+
+  // currentSentenceProcessingResponse =
+  //   this.SentenceProcessingService.getSentenceProcessingResponse();
+
+  //   currentSentenceProcessingResponse2: SentenceProcessingResponse =
+  //     this.SentenceProcessingService.getSentenceProcessingResponse2();
 }

@@ -1,7 +1,6 @@
 import { Request } from './request';
 
 export const formRequest: Request = {
-  link: 'https://ec2-3-208-10-160.compute-1.amazonaws.com/meaning-processor/rest/api/v3/process-one-profile?',
   profileType: '',
   section: '',
   description: '',

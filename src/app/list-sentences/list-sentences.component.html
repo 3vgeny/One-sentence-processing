@@ -1,65 +1,82 @@
 <div class="content">
   <h2>List -> Sentences</h2>
   <div *ngFor="let fields of sentencesArr | keyvalue">
-    <ng-container
-      *ngIf="
-        fields.key === 'clauses';
-        then conditionIsTrue;
-        else conditionIsFalse
-      "
-    >
-    </ng-container>
+    <div [ngSwitch]="fields.key">
+      <ng-template ngSwitchCase="clauses">
+        <div>{{ fields.key }} :</div>
 
-    <ng-template #conditionIsTrue>
-      <div>{{ fields.key }} :</div>
-
-      <div
-        style="margin-left: 25px"
-        *ngFor="
-          let fieldsClauses of list.sentences[iSentences].clauses | keyvalue
-        "
-      >
-        {{ fieldsClauses.key }} :
         <div
           style="margin-left: 25px"
           *ngFor="
-            let fiels0 of list.sentences[iSentences].clauses['0'] | keyvalue
+            let fieldsClauses of list.sentences[iSentences].clauses | keyvalue
           "
         >
-          <ng-container
-            *ngIf="
-              fiels0.key === 'components';
-              then conditionIsTrue;
-              else conditionIsFalse
+          {{ fieldsClauses.key }} :
+          <div
+            style="margin-left: 25px"
+            *ngFor="
+              let field0 of list.sentences[iSentences].clauses['0'] | keyvalue
             "
           >
-          </ng-container>
+            <div [ngSwitch]="field0.key">
+              <ng-template ngSwitchCase="components">
+                {{ field0.key }} :
+                <div
+                  style="margin-left: 25px"
+                  *ngFor="
+                    let fielsComponents of list.sentences[iSentences].clauses[
+                      '0'
+                    ].components | keyvalue
+                  "
+                >
+                  <app-clauses-components
+                    [currentFieldComponents]="fielsComponents.value"
+                    [currentFieldComponentsName]="fielsComponents.key"
+                  ></app-clauses-components>
+                </div>
+              </ng-template>
 
-          <ng-template #conditionIsTrue>
-            {{ fiels0.key }} :
-            <div
-              style="margin-left: 25px"
-              *ngFor="
-                let fielsComponents of list.sentences[iSentences].clauses['0']
-                  .components | keyvalue
-              "
-            >
-              <app-clauses-components
-                [currentFieldComponents]="fielsComponents.value"
-                [currentFieldComponentsName]="fielsComponents.key"
-              ></app-clauses-components>
+              <ng-template ngSwitchCase="extraParts">
+                {{ field0.key }} :
+                <div
+                  style="margin-left: 25px"
+                  *ngFor="
+                    let fielsExtraParts of list.sentences[iSentences].clauses[
+                      '0'
+                    ].extraParts | keyvalue
+                  "
+                >
+                  <app-clauses0-extra-parts
+                    [currentFieldExtraParts]="fielsExtraParts.value"
+                    [currentFieldExtraPartsName]="fielsExtraParts.key"
+                  ></app-clauses0-extra-parts>
+                </div>
+              </ng-template>
+
+              <ng-template ngSwitchCase="rolesDoc">
+                {{ field0.key }} :
+                <div
+                  style="margin-left: 25px"
+                  *ngFor="let field of field0.value | keyvalue"
+                >
+                  {{ field.key }} : {{ field.value }}
+                </div>
+              </ng-template>
+
+              <ng-template ngSwitchDefault>
+                {{ field0.key }} : {{ field0.value }}
+              </ng-template>
             </div>
-          </ng-template>
-
-          <ng-template #conditionIsFalse>
-            {{ fiels0.key }} : {{ fiels0.value }}
-          </ng-template>
+          </div>
         </div>
-      </div>
-    </ng-template>
+      </ng-template>
 
-    <ng-template #conditionIsFalse>
-      {{ fields.key }} : {{ fields.value }}
-    </ng-template>
+      <ng-template ngSwitchCase="preprocessingInfo"> </ng-template>
+
+      <ng-template ngSwitchCase="skwInfo"></ng-template>
+      <ng-template ngSwitchDefault
+        >{{ fields.key }} : {{ fields.value }}</ng-template
+      >
+    </div>
   </div>
 </div>

@@ -1,5 +1,11 @@
 export interface SentenceProcessingResponse {
-  list: SentenceProcessingResponseItem[];
+  list: SentenceProcessingResponseItem[] | undefined;
+}
+export class ClassSentenceProcessingResponse {
+  list?: SentenceProcessingResponseItem[];
+  public constructor(options: SentenceProcessingResponse) {
+    this.list = options.list;
+  }
 }
 
 export interface SentenceProcessingResponseItem {

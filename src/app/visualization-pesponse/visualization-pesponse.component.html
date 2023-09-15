@@ -29,36 +29,44 @@
     <p>{{ i }} if -> no</p>
   </ng-template>
 </div> -->
+<!-- <div>
+  <button (click)="aaa()">click</button>
+</div> -->
 
-<div
-  class="page-list"
-  *ngFor="let list of currentSentenceProcessingResponse.list; let iList = index"
->
-  <div class="content">
-    <app-list-meanings
-      *ngFor="let meaningsArr of list.meanings"
-      [meaningsArr]="meaningsArr"
-    ></app-list-meanings>
-  </div>
+<div *ngIf="currentSentenceProcessingResponse">
+  <div
+    class="page-list"
+    *ngFor="
+      let list of currentSentenceProcessingResponse.list;
+      let iList = index
+    "
+  >
+    <div class="content">
+      <app-list-meanings
+        *ngFor="let meaningsArr of list.meanings"
+        [meaningsArr]="meaningsArr"
+      ></app-list-meanings>
+    </div>
 
-  <!-- Displays minings in one div in a column -->
-  <!-- <app-list-meanings [list]="list"></app-list-meanings> -->
+    <!-- Displays minings in one div in a column -->
+    <!-- <app-list-meanings [list]="list"></app-list-meanings> -->
 
-  <div class="content">
-    <app-list-rules
-      *ngFor="let rulesArr of list.rules"
-      [rulesArr]="rulesArr"
-    ></app-list-rules>
-  </div>
+    <div class="content">
+      <app-list-rules
+        *ngFor="let rulesArr of list.rules"
+        [rulesArr]="rulesArr"
+      ></app-list-rules>
+    </div>
 
-  <div class="content">
-    <app-list-sentences
-      *ngFor="let sentencesArr of list.sentences; let iSentences = index"
-      [list]="list"
-      [iList]="iList"
-      [sentencesArr]="sentencesArr"
-      [iSentences]="iSentences"
-    ></app-list-sentences>
+    <div class="content">
+      <app-list-sentences
+        *ngFor="let sentencesArr of list.sentences; let iSentences = index"
+        [list]="list"
+        [iList]="iList"
+        [sentencesArr]="sentencesArr"
+        [iSentences]="iSentences"
+      ></app-list-sentences>
+    </div>
   </div>
 </div>
 

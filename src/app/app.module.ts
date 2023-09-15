@@ -19,6 +19,9 @@ import { ListMeaningsComponent } from './list-meanings/list-meanings.component';
 import { ListRulesComponent } from './list-rules/list-rules.component';
 import { ListSentencesComponent } from './list-sentences/list-sentences.component';
 import { ClausesComponentsComponent } from './clauses-components/clauses-components.component';
+import { Clauses0ExtraPartsComponent } from './clauses0-extra-parts/clauses0-extra-parts.component';
+
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 
 @NgModule({
   declarations: [
@@ -29,6 +32,7 @@ import { ClausesComponentsComponent } from './clauses-components/clauses-compone
     ListRulesComponent,
     ListSentencesComponent,
     ClausesComponentsComponent,
+    Clauses0ExtraPartsComponent,
   ],
   imports: [
     BrowserModule,
@@ -42,6 +46,7 @@ import { ClausesComponentsComponent } from './clauses-components/clauses-compone
     MatFormFieldModule,
     MatInputModule,
     MatSelectModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
