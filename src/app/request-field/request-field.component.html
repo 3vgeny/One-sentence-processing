@@ -105,7 +105,7 @@
         class="button-form-fields"
         mat-raised-button
         color="accent"
-        (click)="createRequest()"
+        (click)="createRequest(currentRequest)"
       >
         Apply
       </button>
@@ -119,22 +119,6 @@
   ></app-visualization-pesponse>
 </div>
 
-<!-- <div *ngIf="userGithubAccount">
-  <div *ngFor="let field of userGithubAccount | keyvalue">
-    {{ field.key }} : {{ field.value }}
-  </div>
-</div> -->
-<!-- ---------------------------------------------------------------------------------------
-<div *ngIf="this.response">
-  <div *ngFor="let a of this.response | keyvalue">
-    {{ a.key }} : {{ a.value }}
-  </div>
-  <div>{{ userGithubAccount.login }}</div>
-</div>
---------------------------------------------------------------------------------------- -->
-<!-- <div *ngIf="currentSentenceProcessingResponse">
-  {{ currentSentenceProcessingResponse }} : {{ check }}
-</div> -->
 <!-- <div class="fields-input">
   <label for="profileType">profileType:</label>
   <input
