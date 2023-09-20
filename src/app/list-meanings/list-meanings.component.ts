@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { SentenceProcessingResponseItem } from '../sentence-processing-response';
+
 // Displays minings in one div in a column
 // import { VisualizationPesponseComponent } from '../visualization-pesponse/visualization-pesponse.component';
 

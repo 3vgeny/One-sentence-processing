@@ -22,6 +22,7 @@ import { ClausesComponentsComponent } from './clauses-components/clauses-compone
 import { Clauses0ExtraPartsComponent } from './clauses0-extra-parts/clauses0-extra-parts.component';
 
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { CheckingEmptyOrNot } from './pipe/checking-empty-or-not.pipe';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
     ListSentencesComponent,
     ClausesComponentsComponent,
     Clauses0ExtraPartsComponent,
+    CheckingEmptyOrNot,
   ],
   imports: [
     BrowserModule,

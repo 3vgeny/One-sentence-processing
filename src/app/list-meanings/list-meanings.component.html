@@ -1,7 +1,7 @@
 <div class="content">
   <h2>List -> Meanings</h2>
   <div class="field" *ngFor="let fields of meaningsArr | keyvalue">
-    {{ fields.key }} : {{ fields.value }}
+    {{ fields.key }} : {{ fields.value | appCheckingEmpty }}
   </div>
 </div>
 
