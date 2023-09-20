@@ -3,6 +3,7 @@ import { formRequest, mockResponseJson } from './mock-request-response';
 import {
   ClassSentenceProcessingResponse,
   SentenceProcessingResponse,
+  SentenceProcessingResponseRules,
 } from './sentence-processing-response';
 import { UserGithubAccount, ClassUserGithubAccount } from './DataFromGithub';
 import { Request } from './request';
@@ -41,6 +42,13 @@ export class SentenceProcessingService {
   //   );
   // }
 
+  getRulesFofClauseId(
+    arrRules: SentenceProcessingResponseRules[],
+    needClauseId: number
+  ): SentenceProcessingResponseRules | undefined {
+    return arrRules.find((rule) => rule.clauseId === needClauseId);
+  }
+
   replaceSpaces(value: string): string {
     return value.replace(/\s+/gi, '%20');
   }
@@ -55,11 +63,12 @@ export class SentenceProcessingService {
 
   takeFormRequest() {
     let currentRequest: Request = {
-      profileType: '',
-      section: '',
-      description: '',
-      keyWord: '',
-      name: '',
+      profileType: 'company',
+      section: 'description',
+      description:
+        'About Social Media Today: Social Media Today is an online community and resource for professionals in marketing, social business, communication, customer experience, content marketing and digital strategy, or any other discipline where a thorough understanding of social media is mission-critical.',
+      keyWord: 'social%20media',
+      name: 'some%20name',
     };
     return currentRequest;
   }

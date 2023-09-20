@@ -42,21 +42,15 @@
     "
   >
     <div class="content">
-      <app-list-meanings
+      <app-visualization-meaning-and-rule
         *ngFor="let meaningsArr of list.meanings"
         [meaningsArr]="meaningsArr"
-      ></app-list-meanings>
+        [list]="list"
+      ></app-visualization-meaning-and-rule>
     </div>
 
     <!-- Displays minings in one div in a column -->
     <!-- <app-list-meanings [list]="list"></app-list-meanings> -->
-
-    <div class="content">
-      <app-list-rules
-        *ngFor="let rulesArr of list.rules"
-        [rulesArr]="rulesArr"
-      ></app-list-rules>
-    </div>
 
     <div class="content">
       <app-list-sentences
@@ -66,6 +60,21 @@
         [sentencesArr]="sentencesArr"
         [iSentences]="iSentences"
       ></app-list-sentences>
+    </div>
+
+    <div class="content">
+      <app-list-meanings
+        *ngFor="let meaningsArr of list.meanings"
+        [meaningsArr]="meaningsArr"
+      >
+      </app-list-meanings>
+    </div>
+
+    <div class="content">
+      <app-list-rules
+        *ngFor="let rule of list.rules"
+        [rule]="rule"
+      ></app-list-rules>
     </div>
   </div>
 </div>

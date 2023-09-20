@@ -1,11 +1,11 @@
 <div class="content">
-  <h2>List -> Meanings</h2>
+  <h2>Meaning</h2>
+
   <div class="field" *ngFor="let fields of meaningsArr | keyvalue">
-    {{ fields.key }} :
-    <span style="color: #919191">{{ fields.value | appCheckingEmpty }}</span>
+    {{ fields.key }} : {{ fields.value | appCheckingEmpty }}
   </div>
 </div>
-
+<!-- <span style="color: #919191">{{ fields.value | appCheckingEmpty }}</span> -->
 <!-- Displays minings in one div in a column -->
 <!-- <div class="content">
   <h2>List -> Meanings</h2>

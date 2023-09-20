@@ -6,5 +6,5 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./list-rules.component.css'],
 })
 export class ListRulesComponent {
-  @Input() rulesArr: any;
+  @Input() rule: any;
 }

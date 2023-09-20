@@ -47,6 +47,7 @@ export interface SentenceProcessingResponseMeaning {
 }
 
 export interface SentenceProcessingResponseRules {
+  [index: string]: any;
   clauseId: number;
   meaningId: string;
   meaningsRulesIds: string[];
