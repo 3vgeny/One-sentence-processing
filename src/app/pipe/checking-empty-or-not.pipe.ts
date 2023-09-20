@@ -6,7 +6,8 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class CheckingEmptyOrNot implements PipeTransform {
   transform(value: any): any {
-    value ? value : (value = 'field empty');
+    value ? value : (value = 'empty');
+    // let color=
     return value;
   }
 }

@@ -48,8 +48,7 @@ export class SentenceProcessingService {
   replaceSpacesRequest(request: Request): Request {
     let update: Request = this.takeFormRequest();
     for (let field in request) {
-      // update[field] = this.replaceSpaces(request[field]);
-      request[field] = this.replaceSpaces(request[field]);
+      update[field] = this.replaceSpaces(request[field]);
     }
     return update;
   }
