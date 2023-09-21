@@ -3,5 +3,5 @@
   style="margin-left: 25px"
   *ngFor="let field of currentFieldExtraParts | keyvalue"
 >
-  {{ field.key }} : {{ field.value }}
+  {{ field.key }} : {{ field.value | appCheckingEmpty }}
 </div>

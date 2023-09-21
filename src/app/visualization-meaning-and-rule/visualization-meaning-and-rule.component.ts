@@ -15,8 +15,8 @@ export class VisualizationMeaningAndRuleComponent {
   @Input() meaningsArr: any;
   @Input() list: any;
 
-  getRule(clauseId: number): SentenceProcessingResponseRules | undefined {
-    return this.SentenceProcessingService.getRulesFofClauseId(
+  getRule(clauseId: number): SentenceProcessingResponseRules[] | undefined {
+    return this.SentenceProcessingService.getArrRulesForClauseId(
       this.list.rules,
       clauseId
     );

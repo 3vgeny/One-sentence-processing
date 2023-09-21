@@ -1,7 +1,10 @@
 <div class="content" *ngIf="meaningsArr.clauseId">
   <h2>Meaning && Rule</h2>
 
-  <app-list-rules [rule]="getRule(meaningsArr.clauseId)"></app-list-rules>
+  <app-list-rules
+    *ngFor="let rule of getRule(meaningsArr.clauseId)"
+    [rule]="rule"
+  ></app-list-rules>
 
   <app-list-meanings [meaningsArr]="meaningsArr"> </app-list-meanings>
 </div>

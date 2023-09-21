@@ -25,19 +25,20 @@
           *ngFor="let fieldFromArrComponent of currentFieldComponents.component"
         >
           <div *ngFor="let fieldComponent of fieldFromArrComponent | keyvalue">
-            {{ fieldComponent.key }} : {{ fieldComponent.value }}
+            {{ fieldComponent.key }} :
+            {{ fieldComponent.value | appCheckingEmpty }}
           </div>
         </div>
       </div>
 
       <ng-template #conditionIsFalse>
-        {{ field.key }} : {{ field.value }}
+        {{ field.key }} : {{ field.value | appCheckingEmpty }}
       </ng-template>
     </div>
   </ng-template>
 
   <ng-template #conditionIsFalse>
-    {{ currentFieldComponentsName }} : Default values
+    {{ currentFieldComponentsName }} : does not exist
   </ng-template>
 </div>
 

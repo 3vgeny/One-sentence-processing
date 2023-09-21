@@ -42,11 +42,15 @@ export class SentenceProcessingService {
   //   );
   // }
 
-  getRulesFofClauseId(
+  getArrRulesForClauseId(
     arrRules: SentenceProcessingResponseRules[],
     needClauseId: number
-  ): SentenceProcessingResponseRules | undefined {
-    return arrRules.find((rule) => rule.clauseId === needClauseId);
+  ): SentenceProcessingResponseRules[] | undefined {
+    let necessaryArrRules: SentenceProcessingResponseRules[] | undefined;
+    necessaryArrRules = arrRules.filter(
+      (rule) => rule.clauseId === needClauseId
+    );
+    return necessaryArrRules;
   }
 
   replaceSpaces(value: string): string {

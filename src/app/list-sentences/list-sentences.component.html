@@ -59,12 +59,12 @@
                   style="margin-left: 25px"
                   *ngFor="let field of field0.value | keyvalue"
                 >
-                  {{ field.key }} : {{ field.value }}
+                  {{ field.key }} : {{ field.value | appCheckingEmpty }}
                 </div>
               </ng-template>
 
               <ng-template ngSwitchDefault>
-                {{ field0.key }} : {{ field0.value }}
+                {{ field0.key }} : {{ field0.value | appCheckingEmpty }}
               </ng-template>
             </div>
           </div>
